@@ -2,18 +2,19 @@ const HashMap = require('./hashMap');
 
 
 
+
 function removeDuplicate(str){
   const wordmap = new HashMap(initialCapacity=str.length) 
   let finalStr = ''
   for(letter of str){  
-   try{
-    wordmap.get(letter)
-   }
-   catch(err){
-    wordmap.set(letter,letter)
-    finalStr+=letter
-   }
-  }  
+    try{
+      wordmap.get(letter)  
+      }
+    catch(err){
+      wordmap.set(letter,letter)
+      finalStr+=letter  
+      }
+    }  
   return finalStr
 }
 
@@ -30,16 +31,12 @@ const objs = [{"Hobbit": "Bilbo"}, {"Hobbit": "Frodo"},
   const lor = new HashMap(initialCapacity=8);
   objs.forEach(obj=>lor.set(Object.keys(obj)[0],obj[Object.keys(obj)]))
 
-  // console.log(lor);
-
-  // console.log(lor.get("Maiar"));
-
-  //   console.log(lor.get("Hobbit"));
-
-  //console.log(lor.get("Hobb"));
-
+  console.log(lor);
+  console.log(lor.get("Maiar"));
+  console.log(lor.get("Hobbit"));
+  
   console.log(removeDuplicate('google'),'test google')
-
+  //console.log(isPalidrome('acecarr'))
 
   /* 
     The key of Maiar is set twice, it is not a collision. Therefore,

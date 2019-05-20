@@ -36,6 +36,7 @@ const objs = [{"Hobbit": "Bilbo"}, {"Hobbit": "Frodo"},
   console.log(lor.get("Hobbit"));
   
   console.log(removeDuplicate('google'),'test google')
+  console.log(removeDuplicate('acecarr'))
   //console.log(isPalidrome('acecarr'))
 
   /* 

@@ -2,35 +2,23 @@ const HashMap = require('./hashMap');
 
 function main() {
   // 1>)
+  const objs = [{"Hobbit": "Bilbo"}, {"Hobbit": "Frodo"},
+{"Wizard": "Gandolf"}, {"Human": "Aragon"}, {"Elf": "Legolas"}, {"Maiar": "The Necromancer"},
+{"Maiar": "Sauron"}, {"RingBearer": "Gollum"}, {"LadyOfLight": "Galadriel"}, {"HalfElven": "Arwen"},
+{"Ent": "Treebeard"}]
+
   let hm = new HashMap;
 
-  hm.set("Hobbit", "Bilbo");
-  //console.log('capacity: ' + hm._capacity);
-  hm.set("Hobbit", "Frodo");
-  //console.log('capacity: ' + hm._capacity);
-  hm.set("Wizard", "Gandolf");
-  //console.log('capacity: ' + hm._capacity);
-  hm.set("Human", "Aragon");
-  //console.log('capacity: ' + hm._capacity);
-  hm.set("Elf", "Legolas");
-  //console.log('capacity: ' + hm._capacity);
-  hm.set("Maiar", "The Necromancer");
-  //console.log('capacity: ' + hm._capacity);
-  hm.set("Maiar", "Sauron");
-  //console.log('capacity: ' + hm._capacity);
-  hm.set("RingBearer", "Gollum");
-  //console.log('capacity: ' + hm._capacity);
-  hm.set("LadyOfLight", "Galadriel");
-  //console.log('capacity: ' + hm._capacity);
-  hm.set("HalfElven", "Arwen");
-  //console.log('capacity: ' + hm._capacity);
-  hm.set("Ent", "Treebeard");
-  //console.log('capacity: ' + hm._capacity);
+  const lor = new HashMap(initialCapacity=8);
+  objs.forEach(obj=>lor.set(Object.keys(obj)[0],obj[Object.keys(obj)]))
 
-  console.log(hm);
+  console.log(lor);
 
-  console.log(hm.get("Maiar"));
-  console.log(hm.get("Hobbit"));
+  console.log(lor.get("Maiar"));
+  console.log(lor.get("Hobbit"));
+
+
+
 
   /* 
     The key of Maiar is set twice, it is not a collision. Therefore,

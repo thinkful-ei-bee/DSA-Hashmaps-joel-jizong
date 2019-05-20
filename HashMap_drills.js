@@ -1,8 +1,26 @@
 const HashMap = require('./hashMap');
 
+
+
+function removeDuplicate(str){
+  const wordmap = new HashMap(initialCapacity=str.length) 
+  let finalStr = ''
+  for(letter of str){  
+   try{
+    wordmap.get(letter)
+   }
+   catch(err){
+    wordmap.set(letter,letter)
+    finalStr+=letter
+   }
+  }  
+  return finalStr
+}
+
+
 function main() {
-  // 1>)
-  const objs = [{"Hobbit": "Bilbo"}, {"Hobbit": "Frodo"},
+
+const objs = [{"Hobbit": "Bilbo"}, {"Hobbit": "Frodo"},
 {"Wizard": "Gandolf"}, {"Human": "Aragon"}, {"Elf": "Legolas"}, {"Maiar": "The Necromancer"},
 {"Maiar": "Sauron"}, {"RingBearer": "Gollum"}, {"LadyOfLight": "Galadriel"}, {"HalfElven": "Arwen"},
 {"Ent": "Treebeard"}]
@@ -12,12 +30,15 @@ function main() {
   const lor = new HashMap(initialCapacity=8);
   objs.forEach(obj=>lor.set(Object.keys(obj)[0],obj[Object.keys(obj)]))
 
-  console.log(lor);
+  // console.log(lor);
 
-  console.log(lor.get("Maiar"));
-  console.log(lor.get("Hobbit"));
+  // console.log(lor.get("Maiar"));
 
+  //   console.log(lor.get("Hobbit"));
 
+  //console.log(lor.get("Hobb"));
+
+  console.log(removeDuplicate('google'),'test google')
 
 
   /* 
@@ -27,7 +48,7 @@ function main() {
     meant to be replaced
   */
 
-  console.log(hm._capacity);
+  //console.log(hm._capacity);
 
   /*
     const loadRatio = (this.length + this._deleted + 1) / this._capacity;

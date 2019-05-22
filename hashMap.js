@@ -1,3 +1,5 @@
+const LinkedList = require('./LinkedList')
+
 class HashMap {
   constructor(initialCapacity=8) {
       this.length = 0;
@@ -23,7 +25,7 @@ class HashMap {
       }
       //Find the slot where this key should be in
       const index = this._findSlot(key);
-
+      
       if(!this._hashTable[index]){
           this.length++;
       }
